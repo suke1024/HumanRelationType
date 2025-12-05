@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { TYPE_NAMES } from "@/data/typeNames";
+
+
 // 64問データ：各8問ずつ、8カテゴリに分類
 const QUESTIONS = [
   // ① 横柄で支配的
