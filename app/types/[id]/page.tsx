@@ -2,7 +2,15 @@
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
-const TYPE_DETAILS = {
+const TYPE_DETAILS:Record<string,{
+  title: string;
+  color: string;
+  image: string;
+  summary: string;
+  section1: string;
+  section2: string;
+  advice: string;
+}> = {
   1: {
     title: "横柄で支配的",
     color: "#3B82F6",
@@ -113,7 +121,7 @@ export default function TypeDetailPage() {
   const params = useParams();
   const router = useRouter();
   const id = Number(params.id);
-  const data = TYPE_DETAILS[id];
+  const data = TYPE_DETAILS[id.toString()];
 
   if (!data)
     return (
