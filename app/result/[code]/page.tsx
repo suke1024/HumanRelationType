@@ -1,19 +1,12 @@
-type Props = { params: { code: string } };
+import ClientResultPage from "./ClientResultPage";
 
-const RESULTS: Record<string, { title: string; desc: string }> = {
-  ENTP: { title: "討論者タイプ", desc: "アイデアを出すのが得意で、自由を重視します。" },
-  INFJ: { title: "提唱者タイプ", desc: "直感的で理想主義。人の成長を支えるのが得意です。" },
+type PageProps = {
+  params: Promise<{ code: string }>;
 };
 
-export default function ResultPage({ params: { code } }: Props) {
-  const info = RESULTS[code] ?? { title: "診断結果", desc: "このタイプの情報はまだありません。" };
-  return (
-    <main className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">{info.title}</h1>
-      <p className="mb-4">{info.desc}</p>
-      <a href="/quiz" className="inline-block px-4 py-2 border rounded">
-        もう一度診断
-      </a>
-    </main>
-  );
+export default async function ResultPage({ params }: PageProps) {
+  const { code } = await params;
+
+  // code は /result/ENTP の "ENTP" のような文字列が入る
+  return <ClientResultPage code={code} />;
 }
