@@ -178,7 +178,7 @@ export default function TestPage() {
                   </label>
                 ))}
               </div>
-              <span className="text-sm text-gray-600">全くあてはまる</span>
+              <span className="text-sm text-gray-600">よくあてはまる</span>
             </div>
           </div>
         ))}
