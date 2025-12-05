@@ -83,17 +83,8 @@ const QUESTIONS = [
   { id: 64, text: "私は他者に個人的な事柄をしゃべり過ぎる", category: 8 },
 ];
 
-// タイプ名称
-export const TYPE_NAMES = [
-  "横柄で支配的",
-  "執念深く自己中心的",
-  "冷淡でよそよそしい",
-  "引っ込み思案",
-  "自己主張ができない",
-  "周りに合わせすぎる",
-  "自己犠牲的",
-  "おせっかいで要求がましい",
-];
+// タイプ名称はtypeNAME.tsからインポートして使用
+
 
 export async function GET() {
   return NextResponse.json(QUESTIONS);
