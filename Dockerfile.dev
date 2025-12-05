@@ -1,0 +1,21 @@
+FROM node:20-bookworm
+WORKDIR /app
+
+COPY package.json package-lock.json* pnpm-lock.yaml* ./
+RUN corepack enable || true
+RUN if [ -f pnpm-lock.yaml ]; then \
+      --mount=type=cache,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then \
+      npm ci; \
+    else \
+      npm install; \
+    fi
+
+COPY . .
+
+ENV NODE_ENV=development \
+    CHOKIDAR_USEPOLLING=1 \
+    WATCHPACK_POLLING=true
+
+EXPOSE 3000
+CMD ["npm","run","dev"]
