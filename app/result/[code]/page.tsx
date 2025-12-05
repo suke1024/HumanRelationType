@@ -1,12 +1,11 @@
 import ClientResultPage from "./ClientResultPage";
 
-type PageProps = {
+// Next.js 15 の正しい型定義
+export default async function Page(props: {
   params: Promise<{ code: string }>;
-};
+}) {
+  // params を await で取り出す
+  const { code } = await props.params;
 
-export default async function ResultPage({ params }: PageProps) {
-  const { code } = await params;
-
-  // code は /result/ENTP の "ENTP" のような文字列が入る
   return <ClientResultPage code={code} />;
 }
