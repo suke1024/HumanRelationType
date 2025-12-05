@@ -1,0 +1,17 @@
+[33mba3a14f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m TYPE_DETAIL
+[33m03d3d22[m commit
+[33m3a0e374[m commit
+[33m8af731e[m comit
+[33m3883d42[m importtypenameを削除
+[33mc591061[m typeName.ts移動
+[33mc78afc4[m latest commit
+[33m55dba72[m Merge branch 'main' of https://github.com/suke1024/HumanRelationType
+[33m2d47b77[m komit
+[33m9903496[m fix: move TYPE_NAMES to data/typeNames.ts
+[33mdc8572f[m fix: add missing questions.json
+[33ma969bdc[m commits
+[33mef73511[m commit4
+[33m3fd8b1a[m commit3
+[33m6152a07[m commit2
+[33mef8059e[m commit
+[33ma28dec3[m Initial commit from Create Next App
